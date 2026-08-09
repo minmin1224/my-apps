@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自作アプリ一覧 | 個人開発ポートフォリオ</title>
+<meta name="description" content="個人開発した5つのWebアプリをまとめて紹介するポートフォリオページ。インストール不要、ブラウザだけですぐに使えます。">
+<link rel="icon" href="https://minmin1224.github.io/To-Dooon-/app/icons/icon-192.png">
+<style>
+  :root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --primary-light: #eef2ff;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f8fafc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  a { color: inherit; }
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 20px 0;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav .mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .nav span { font-weight: 700; font-size: 1.1rem; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary-light), #ffffff);
+    padding: 64px 0 72px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 16px;
+    color: var(--primary-dark);
+  }
+  .hero p.lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  section { padding: 56px 0; }
+  h2.section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 0 40px;
+    color: var(--text);
+  }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .app-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-card .head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .app-card .head img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  .app-card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  .app-card p.desc {
+    margin: 0 0 20px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    flex-grow: 1;
+  }
+  .app-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+  }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+  .btn-secondary {
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--primary); }
+  .btn-ghost {
+    background: #f3f4f6;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }
+
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .note {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="mark">App</div>
+      <span>自作アプリ一覧</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>作ったアプリ、まとめました。</h1>
+      <p class="lead">
+        個人開発したWebアプリを1ページに集約しました。すべてインストール不要、ブラウザで開くだけですぐに使えます。
+        気になるアプリがあれば、下のカードから試してみてください。
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">アプリ一覧</h2>
+      <div class="apps-grid">
+
+        <div class="app-card">
+          <div class="head">
+            <img src="https://minmin1224.github.io/To-Dooon-/app/icons/icon-192.png" alt="To-Doooon! アイコン">
+            <h3>To-Doooon!</h3>
+          </div>
+          <p class="desc">期限管理とGoogleカレンダー連携を備えた、シンプルなタスク管理アプリ。ブラウザのlocalStorageにデータを保存し、スマホのホーム画面にも追加できます。</p>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://minmin1224.github.io/To-Dooon-/app/">アプリを開く</a>
+            <a class="btn btn-secondary" href="https://minmin1224.github.io/To-Dooon-/">紹介ページ</a>
+            <a class="btn btn-ghost" href="https://github.com/minmin1224/To-Dooon-">GitHub</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="head">
+            <img src="https://minmin1224.github.io/K-Counter/app/icons/icon-192.png" alt="小役カウンタ アイコン">
+            <h3>小役カウンタ</h3>
+          </div>
+          <p class="desc">パチスロの総遊技数と小役の出現回数を記録し、出現率を自動計算するスマホ向けアプリ。インストール不要、ブラウザだけで使えます。</p>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://minmin1224.github.io/K-Counter/app/">アプリを開く</a>
+            <a class="btn btn-secondary" href="https://minmin1224.github.io/K-Counter/">紹介ページ</a>
+            <a class="btn btn-ghost" href="https://github.com/minmin1224/K-Counter">GitHub</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="head">
+            <img src="https://minmin1224.github.io/meishi-app/app/icons/icon-192.png" alt="名刺管理 アイコン">
+            <h3>名刺管理</h3>
+          </div>
+          <p class="desc">スマホで名刺を撮影するだけでOCRが氏名・会社名・連絡先を自動入力。50音順・氏名順・会社名順で整理できる無料の名刺管理アプリ。</p>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://minmin1224.github.io/meishi-app/app/">アプリを開く</a>
+            <a class="btn btn-secondary" href="https://minmin1224.github.io/meishi-app/">紹介ページ</a>
+            <a class="btn btn-ghost" href="https://github.com/minmin1224/meishi-app">GitHub</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="head">
+            <img src="https://minmin1224.github.io/news-digest/icons/icon-192.png" alt="ニュースダイジェスト アイコン">
+            <h3>ニュースダイジェスト</h3>
+          </div>
+          <p class="desc">NHKニュースをカテゴリ別に要約表示するWebアプリ。気になるニュースは元記事の全文へワンタップで移動可能。ニュースデータは20分おきに自動更新されます。</p>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://minmin1224.github.io/news-digest/app/">アプリを開く</a>
+            <a class="btn btn-secondary" href="https://minmin1224.github.io/news-digest/">紹介ページ</a>
+            <a class="btn btn-ghost" href="https://github.com/minmin1224/news-digest">GitHub</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="head">
+            <img src="https://minmin1224.github.io/baito-shift-app/app/icons/icon-192.png" alt="バイトシフト確認 アイコン">
+            <h3>バイトシフト確認</h3>
+          </div>
+          <p class="desc">カレンダーにバイトの開始・終了時間を入力するだけのシフト確認アプリ。休みの日は自動で色分けされ、時給を登録すれば給与も自動計算。音声入力にも対応しています。</p>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://minmin1224.github.io/baito-shift-app/app/">アプリを開く</a>
+            <a class="btn btn-secondary" href="https://minmin1224.github.io/baito-shift-app/">紹介ページ</a>
+            <a class="btn btn-ghost" href="https://github.com/minmin1224/baito-shift-app">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="note">
+        ※ 掲載しているアプリはすべてブラウザ内(localStorage)にデータを保存する個人開発ツールです。端末やブラウザを変えるとデータは引き継がれません。
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>自作アプリ一覧 &mdash; 個人開発</p>
+    </div>
+  </footer>
+
+</body>
+</html>
