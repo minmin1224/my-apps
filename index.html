@@ -76,6 +76,22 @@
     color: #16a34a;
     text-shadow: 0 3px 0 rgba(0,0,0,0.08), 0 6px 18px rgba(22,163,74,0.35);
   }
+  .visitor-counter {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: #fff;
+    margin: 0 auto 20px;
+    padding: 8px 22px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.15);
+  }
+  .visitor-counter .num {
+    color: #16a34a;
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
   .hero h1 {
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     margin: 0 0 16px;
@@ -131,6 +147,15 @@
     color: var(--text-muted);
     font-size: 0.92rem;
     flex-grow: 1;
+  }
+  .app-stats {
+    margin: -6px 0 14px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .app-stats .num {
+    font-weight: 700;
+    color: var(--primary);
   }
   .app-links {
     display: flex;
@@ -197,6 +222,7 @@
   <section class="hero">
     <div class="container">
       <p class="eyebrow">みんみんラボ</p>
+      <p class="visitor-counter">あなたは <span class="num" id="visitorCount">―</span> 人目のお客様です</p>
       <h1>作ったアプリ、まとめました。</h1>
       <p class="lead">
         個人開発したWebアプリを1ページに集約しました。すべてインストール不要、ブラウザで開くだけですぐに使えます。
@@ -210,12 +236,13 @@
       <h2 class="section-title">アプリ一覧</h2>
       <div class="apps-grid">
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="todooon">
           <div class="head">
             <img src="https://minmin1224.github.io/To-Dooon-/app/icons/icon-192.png" alt="To-Doooon! アイコン">
             <h3>To-Doooon!</h3>
           </div>
           <p class="desc">期限管理とGoogleカレンダー連携を備えた、シンプルなタスク管理アプリ。ブラウザのlocalStorageにデータを保存し、スマホのホーム画面にも追加できます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/To-Dooon-/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/To-Dooon-/">紹介ページ</a>
@@ -223,12 +250,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="kcounter">
           <div class="head">
             <img src="https://minmin1224.github.io/K-Counter/app/icons/icon-192.png" alt="小役カウンタ アイコン">
             <h3>小役カウンタ</h3>
           </div>
           <p class="desc">パチスロの総遊技数と小役の出現回数を記録し、出現率を自動計算するスマホ向けアプリ。インストール不要、ブラウザだけで使えます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/K-Counter/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/K-Counter/">紹介ページ</a>
@@ -236,12 +264,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="meishi">
           <div class="head">
             <img src="https://minmin1224.github.io/meishi-app/app/icons/icon-192.png" alt="名刺管理 アイコン">
             <h3>名刺管理</h3>
           </div>
           <p class="desc">スマホで名刺を撮影するだけでOCRが氏名・会社名・連絡先を自動入力。50音順・氏名順・会社名順で整理できる無料の名刺管理アプリ。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/meishi-app/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/meishi-app/">紹介ページ</a>
@@ -249,12 +278,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="newsdigest">
           <div class="head">
             <img src="https://minmin1224.github.io/news-digest/icons/icon-192.png" alt="ニュースダイジェスト アイコン">
             <h3>ニュースダイジェスト</h3>
           </div>
           <p class="desc">NHKニュースをカテゴリ別に要約表示するWebアプリ。気になるニュースは元記事の全文へワンタップで移動可能。ニュースデータは20分おきに自動更新されます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/news-digest/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/news-digest/">紹介ページ</a>
@@ -262,12 +292,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="baitoshift">
           <div class="head">
             <img src="https://minmin1224.github.io/baito-shift-app/app/icons/icon-192.png" alt="バイトシフト確認 アイコン">
             <h3>バイトシフト確認</h3>
           </div>
           <p class="desc">カレンダーにバイトの開始・終了時間を入力するだけのシフト確認アプリ。休みの日は自動で色分けされ、時給を登録すれば給与も自動計算。音声入力にも対応しています。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/baito-shift-app/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/baito-shift-app/">紹介ページ</a>
@@ -275,12 +306,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="ganttchart">
           <div class="head">
             <img src="https://minmin1224.github.io/gantt-chart-app/app/icons/icon-192.png" alt="ガントチャート管理 アイコン">
             <h3>ガントチャート管理</h3>
           </div>
           <p class="desc">行程・難易度・担当者・予定日を入力するだけで自動でガントチャートが完成するタスク管理アプリ。期限を過ぎても未入力の項目は赤色でアラート表示。日単位・週単位の表示切り替えにも対応しています。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/gantt-chart-app/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/gantt-chart-app/">紹介ページ</a>
@@ -288,12 +320,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="moguratataki">
           <div class="head">
             <img src="https://minmin1224.github.io/mogura-tataki-app/app/icons/icon.png" alt="もぐらたたきゲーム アイコン">
             <h3>もぐらたたきゲーム</h3>
           </div>
           <p class="desc">6匹のもぐらを制限時間15秒でたたく無料ブラウザゲーム。かんたん〜鬼の4段階で難易度調整が可能。インストール不要、ブラウザだけで今すぐ遊べます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/mogura-tataki-app/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/mogura-tataki-app/">紹介ページ</a>
@@ -301,12 +334,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="mealtracker">
           <div class="head">
             <img src="https://minmin1224.github.io/meal-tracker-app/app/icons/icon-192.png" alt="食事管理アプリ アイコン">
             <h3>食事管理アプリ</h3>
           </div>
           <p class="desc">写真からAIが食事内容とカロリーを自動判定。朝食・昼食・夕食・間食、体重、血圧(朝夕)をまとめて記録でき、体重の推移はグラフで確認できます。データは端末内にのみ保存されます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/meal-tracker-app/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/meal-tracker-app/">紹介ページ</a>
@@ -314,12 +348,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="orderdecider">
           <div class="head">
             <img src="https://minmin1224.github.io/order-decider-app-public/icon.png" alt="番号抽選アプリ アイコン">
             <h3>番号抽選アプリ</h3>
           </div>
           <p class="desc">人数を自由に設定してボタンを押すだけの抽選アプリ。ルーレット演出と効果音で盛り上がり、一度出た番号は重複せず、抽選履歴がそのまま順番として残ります。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/order-decider-app-public/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/order-decider-app-public/">紹介ページ</a>
@@ -327,12 +362,13 @@
           </div>
         </div>
 
-        <div class="app-card">
+        <div class="app-card" data-app-key="machiaruki">
           <div class="head">
             <img src="https://minmin1224.github.io/machi-aruki-app-public/app/icons/icon-192.png" alt="まちあるき アイコン">
             <h3>まちあるき</h3>
           </div>
           <p class="desc">Googleストリートビューと連動したバーチャル散歩アプリ。地名検索や世界のランダムスポットへジャンプでき、訪れた場所は履歴・お気に入りとして記録できます。</p>
+          <p class="app-stats">利用回数: <span class="num app-count">―</span> 回</p>
           <div class="app-links">
             <a class="btn btn-primary" href="https://minmin1224.github.io/machi-aruki-app-public/app/">アプリを開く</a>
             <a class="btn btn-secondary" href="https://minmin1224.github.io/machi-aruki-app-public/">紹介ページ</a>
@@ -357,6 +393,50 @@
       <p>自作アプリ一覧 &mdash; 個人開発</p>
     </div>
   </footer>
+
+  <script>
+  (function () {
+    var NAMESPACE = 'minmin1224-my-apps-hub';
+    var API = 'https://abacus.jasoncameron.dev';
+
+    function formatNum(n) {
+      return Number(n).toLocaleString('ja-JP');
+    }
+
+    // サイト全体の訪問者数(読み込みごとにカウントアップ)
+    var visitorEl = document.getElementById('visitorCount');
+    fetch(API + '/hit/' + NAMESPACE + '/visitors')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (visitorEl) visitorEl.textContent = formatNum(data.value);
+      })
+      .catch(function () {
+        if (visitorEl) visitorEl.textContent = '取得できませんでした';
+      });
+
+    // アプリごとの利用回数(「アプリを開く」クリックでカウントアップ、現在値を表示)
+    document.querySelectorAll('.app-card[data-app-key]').forEach(function (card) {
+      var key = card.getAttribute('data-app-key');
+      var countEl = card.querySelector('.app-count');
+      var openLink = card.querySelector('.btn-primary');
+
+      fetch(API + '/get/' + NAMESPACE + '/' + key)
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (countEl) countEl.textContent = formatNum(data.value || 0);
+        })
+        .catch(function () {
+          if (countEl) countEl.textContent = '―';
+        });
+
+      if (openLink) {
+        openLink.addEventListener('click', function () {
+          fetch(API + '/hit/' + NAMESPACE + '/' + key).catch(function () {});
+        });
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>
