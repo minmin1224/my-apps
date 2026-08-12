@@ -208,6 +208,22 @@
     border-radius: 10px;
     padding: 14px 18px;
   }
+
+  .feedback-lead {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 560px;
+    margin: -20px auto 32px;
+  }
+  .feedback-box {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
 </style>
 </head>
 <body>
@@ -399,6 +415,25 @@
       <p class="note">
         ※ 掲載しているアプリはすべてブラウザ内(localStorage)にデータを保存する個人開発ツールです。端末やブラウザを変えるとデータは引き継がれません。
       </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">感想・ご要望</h2>
+      <p class="feedback-lead">
+        アプリやサイトについて、感想やリクエストがあればお気軽にコメントしてください。お名前は好きなハンドルネームでOKです。
+      </p>
+      <div class="feedback-box">
+        <div id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id="7872da7e-b2d1-4f12-ac5f-225fda79013b"
+          data-page-id="my-apps-hub"
+          data-page-url="https://minmin1224.github.io/my-apps/"
+          data-page-title="自作アプリ一覧 | 個人開発ポートフォリオ">
+        </div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      </div>
     </div>
   </section>
 
